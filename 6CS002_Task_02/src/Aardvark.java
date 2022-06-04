@@ -159,7 +159,7 @@ public class Aardvark {
   }
 
   private void rotateDominoes() {
- 
+    
     for (int x = 0; x < 7; x++) {
       for (int y = 0; y < 6; y++) {
 
