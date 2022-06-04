@@ -66,7 +66,7 @@ public class Aardvark {
   }
 
   void collateGrid() {
-    for (Domino d : _d) {
+    _d.forEach(d-> {
       if (!d.placed) {
         grid[d.hy][d.hx] = 9;
         grid[d.ly][d.lx] = 9;
@@ -74,7 +74,7 @@ public class Aardvark {
         grid[d.hy][d.hx] = d.high;
         grid[d.ly][d.lx] = d.low;
       }
-    }
+    });
   }
 
   void collateGuessGrid() {
@@ -83,12 +83,12 @@ public class Aardvark {
         gg[r][c] = 9;
       }
     }
-    for (Domino d : _g) {
+    _d.forEach(d->  {
       if (d.placed) {
         gg[d.hy][d.hx] = d.high;
         gg[d.ly][d.lx] = d.low;
       }
-    }
+    });
   }
 
   int pg() {
@@ -132,18 +132,18 @@ public class Aardvark {
   }
 
   private void invertSomeDominoes() {
-    for (Domino d : _d) {
+    _d.forEach(d-> {
       if (Math.random() > 0.5) {
         d.invert();
       }
-    }
+    });
   }
 
   private void placeDominoes() {
     int x = 0;
     int y = 0;
     int count = 0;
-    for (Domino d : _d) {
+    _d.forEach(d-> {
       count++;
       d.place(x, y, x + 1, y);
       x += 2;
@@ -151,7 +151,7 @@ public class Aardvark {
         x = 0;
         y++;
       }
-    }
+    });
     if (count != 28) {
       System.out.println("something went wrong generating dominoes");
       System.exit(0);
