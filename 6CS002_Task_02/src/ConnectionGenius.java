@@ -1,6 +1,5 @@
 import java.net.InetAddress;
 
-
 public class ConnectionGenius {
 
   InetAddress ipa;
@@ -8,10 +7,7 @@ public class ConnectionGenius {
   public ConnectionGenius(InetAddress ipa) {
     this.ipa = ipa;
   }
-
   
-  
-  }
   
   public void downloadWebVersion(){
     System.out.println("Getting specialised web version.");
